@@ -2,10 +2,11 @@
 //  MockURLProtocol.swift
 //  FlickrSampleTests
 //
-//  Created by Swathi Kotte on 7/12/24.
+//  Created by Swathi Kotte 09/25/24.
 //
 
 import Foundation
+import Combine
 
 class MockURLProtocol: URLProtocol {
     static var mockData: Data?
@@ -30,3 +31,4 @@ class MockURLProtocol: URLProtocol {
     
     override func stopLoading() {}
 }
+

@@ -17,6 +17,7 @@
 		E6A040C72C419A28001FC49B /* FlickrViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A040C62C419A28001FC49B /* FlickrViewModel.swift */; };
 		E6A040C92C419A70001FC49B /* FlickrImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A040C82C419A70001FC49B /* FlickrImageModel.swift */; };
 		E6A040CB2C419AEA001FC49B /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A040CA2C419AE9001FC49B /* MockURLProtocol.swift */; };
+		F4D836F12CA49621009342E4 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D836F02CA49621009342E4 /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E6A040C62C419A28001FC49B /* FlickrViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrViewModel.swift; sourceTree = "<group>"; };
 		E6A040C82C419A70001FC49B /* FlickrImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickrImageModel.swift; sourceTree = "<group>"; };
 		E6A040CA2C419AE9001FC49B /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		F4D836F02CA49621009342E4 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				E6A040A02C4199AA001FC49B /* Assets.xcassets */,
 				E6A040A22C4199AA001FC49B /* Preview Content */,
 				E6A040C82C419A70001FC49B /* FlickrImageModel.swift */,
+				F4D836F02CA49621009342E4 /* ServiceManager.swift */,
 			);
 			path = FlickrSample;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				E6A0409F2C4199A7001FC49B /* ContentView.swift in Sources */,
 				E6A040C72C419A28001FC49B /* FlickrViewModel.swift in Sources */,
 				E6A0409D2C4199A7001FC49B /* FlickrSampleApp.swift in Sources */,
+				F4D836F12CA49621009342E4 /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,40 +2,50 @@
 //  FlickrSampleUITests.swift
 //  FlickrSampleUITests
 //
-//  Created by Swathi Kotte on 7/12/24.
+//  Created by Swathi Kotte 09/25/24.
 //
 
 import XCTest
 
 final class FlickrSampleUITests: XCTestCase {
+    var app: XCUIApplication!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+      override func setUp() {
+          super.setUp()
+          app = XCUIApplication()
+          app.launch()
+      }
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+      override func tearDown() {
+          app = nil
+          super.tearDown()
+      }
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+      func testSearchFunctionality() {
+          // Assuming the SearchBar placeholder text is "Search some thing like fruits"
+          let searchBarPlaceholder = "Search some thing like fruits"
+          
+          // Verify that the search bar exists
+          let searchBar = app.searchFields[searchBarPlaceholder]
+          XCTAssertTrue(searchBar.exists, "Search bar should exist.")
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+          // Tap the search bar and type a search term
+          searchBar.tap()
+          searchBar.typeText("fruits")
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
-    }
+          // Assuming there is a search button that gets triggered when the return key is pressed
+          searchBar.typeText("\n") // Simulate pressing the return key
+    
+          
+          // Wait for the loading to finish (you may need to adjust the sleep time based on your loading time)
+          sleep(3) // Replace with appropriate expectation handling in real tests
+          
+          // Verify that images are displayed in the grid
+          let firstImage = app.images.element(boundBy: 0) // Assuming images are shown as XCUIElementTypeImage
+          XCTAssertTrue(firstImage.exists, "At least one image should be displayed after search.")
+          
+          // Optionally, tap the first image and verify that the detail view appears
+          firstImage.tap()
+          
+      }
 }
